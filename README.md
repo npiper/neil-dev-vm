@@ -11,6 +11,12 @@ Ubuntu 14+ iso
 
 ## Oracle JDK 1.8
 
+## Groovy
+
+## Curl
+
+## Wget
+
 ## Git
 
 ## Maven
@@ -31,6 +37,8 @@ Ubuntu 14+ iso
 ### Plugins?
 
 ## Sublime Text
+
+http://askubuntu.com/questions/172698/how-do-i-install-sublime-text-2-3
 
 ```
 sudo add-apt-repository ppa:webupd8team/sublime-text-3
