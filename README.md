@@ -11,6 +11,8 @@ Ubuntu 14+ iso
 
 ## Oracle JDK 1.8
 
+## NodeJS
+
 ## Groovy
 
 ## Curl
@@ -19,12 +21,19 @@ Ubuntu 14+ iso
 
 ## Git
 
+ * Github shortcuts
+
 ## Maven
 
 ## Gradle
 
 ## Ruby
 
+## Docker
+
+### Docker aliases
+
+ * Remove all images
 
 ## Chrome + Postman
 
