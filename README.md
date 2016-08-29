@@ -31,6 +31,9 @@ Ubuntu 14+ iso
 
 ## Docker
 
+ *  Docker compose
+ *  Docker machine
+
 ### Docker aliases
 
  * Remove all images
