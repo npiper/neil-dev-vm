@@ -43,6 +43,8 @@ Certain images will need persistent volumes for backing up and repositories.
 Investigate how to backup the volumes?
 Dropbox API?
 
+http://blog.david-jensen.com/backup-wordpress-to-dropbox-amazon-ec2-centos/
+
 ## Databases
 
-Either based on 
+Either based on Amazon or Docker containers 

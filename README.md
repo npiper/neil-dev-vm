@@ -58,6 +58,11 @@ sudo apt-get update
 sudo apt-get install sublime-text-installer
 ```
 
+ * Put on path
+```
+ln -s /opt/sublime_text/sublime_text /usr/bin/sublime_text
+```
+
 ### Plugins?
 PackageControl
 Git
