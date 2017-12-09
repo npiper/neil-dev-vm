@@ -48,6 +48,10 @@ Ubuntu 14+ iso
 
 ### Plugins?
 
+## ATOM
+
+
+
 ## Sublime Text
 
 http://askubuntu.com/questions/172698/how-do-i-install-sublime-text-2-3
