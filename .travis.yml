@@ -3,7 +3,7 @@ sudo: required
 language: ruby
 
 install:
-  apt-get install -y -q vagrant virtualbox
+  sudo apt-get install -y -q vagrant virtualbox
 
 script:
   cd ./vagrant
