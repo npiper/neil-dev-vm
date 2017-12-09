@@ -4,6 +4,7 @@ language: ruby
 
 install:
  - sudo apt-get purge virtualbox-dkms
+ - sudo apt-get purge virtualbox-ose-dkms
  - sudo apt-get purge virtualbox
  - sudo apt-get install -y -q virtualbox-dkms
  - sudo apt-get install -y -q virtualbox-ose-dkms
