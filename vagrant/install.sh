@@ -1,7 +1,7 @@
  #/bin/sh
 
 # Set TZ to Melbourne
-timedatectl set-timezone Australia/Melbourne
+timedatectl set-timezone Europe/London 
 
 # Upgrade distribution
 apt-get dist-upgrade -y
@@ -86,6 +86,6 @@ printf "<settingsSecurity>\n  <master>$(less pass.txt)</master>\n</settingsSecur
 rm pass.txt
 
 ## settings.xml
-cp /vagrant_data/settings-mlc.xml /home/vagrant/.m2/settings.xml
+cp /vagrant_data/settings.xml /home/vagrant/.m2/settings.xml
 
 
