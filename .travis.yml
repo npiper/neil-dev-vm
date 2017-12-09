@@ -8,7 +8,6 @@ install:
  - sudo apt-get purge virtualbox
  - sudo apt-get install -y -q linux-headers-generic
  - sudo apt-get update
- - sudo apt-get upgrade
  - sudo apt-get install -y -q virtualbox-dkms
  - sudo apt-get install -y -q virtualbox-ose-dkms
 
