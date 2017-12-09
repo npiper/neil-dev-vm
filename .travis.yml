@@ -3,14 +3,13 @@ sudo: required
 language: ruby
 
 install:
+ - sudo apt-get update
  - sudo apt-get purge virtualbox-dkms
  - sudo apt-get purge virtualbox-ose-dkms
  - sudo apt-get purge virtualbox
  - sudo apt-get install -y -q linux-headers-generic
- - sudo apt-get update
  - sudo apt-get install -y -q virtualbox-dkms
  - sudo apt-get install -y -q virtualbox-ose-dkms
-
  - sudo apt-get install -y -q virtualbox
  - sudo apt-get install -y -q vagrant
 
