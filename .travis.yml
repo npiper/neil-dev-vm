@@ -6,5 +6,6 @@ install:
   sudo apt-get install -y -q vagrant virtualbox
 
 script:
+ - VBoxManage --version
  - cd ./vagrant
  - vagrant package --base neil-dev-vm
