@@ -3,8 +3,8 @@ sudo: required
 language: ruby
 
 install:
- - sudo apt-get purge virtualbox
- - sudo apt-get install -y -q linux-headers-generic virtualbox-dkms virtualbox vagrant
+ - sudo apt-get purge virtualbox virtualbox-dkms
+ - sudo apt-get install -y -q virtualbox-dkms linux-headers-generic virtualbox vagrant
 
 script:
  - VBoxManage --version
