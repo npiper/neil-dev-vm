@@ -2,8 +2,8 @@ dist: trusty
 sudo: required
 language: ruby
 
-install:
-  sudo apt-get install -y -q linux-headers-generic vagrant virtualbox virtualbox-dkms
+#install:
+#  sudo apt-get install -y -q linux-headers-generic vagrant virtualbox virtualbox-dkms
 
 script:
  - VBoxManage --version
