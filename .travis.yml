@@ -1,0 +1,10 @@
+dist: trusty
+sudo: required
+language: ruby
+
+install:
+  apt-get install -y -q vagrant virtualbox
+
+script:
+  cd ./vagrant
+  vagrant package --base neil-dev-vm
