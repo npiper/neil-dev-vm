@@ -1,7 +1,8 @@
 [Desktop Entry]
+Version=1.0
 Encoding=UTF-8
-Name=Postman
-Exec=Postman
+Name=/opt/Postman/Postman
+Exec=/opt/Postman
 Icon=/opt/Postman/resources/app/assets/icon.png
 Terminal=false
 Type=Application

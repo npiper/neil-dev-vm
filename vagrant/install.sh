@@ -1,7 +1,7 @@
  #/bin/sh
 
 # Set TZ to Melbourne
-timedatectl set-timezone Europe/London 
+timedatectl set-timezone Europe/London
 
 # Upgrade distribution
 apt-get dist-upgrade -y
@@ -17,7 +17,7 @@ dpkg --configure -a
 apt-get -y update
 apt-get -y install -f
 apt-get -y install google-chrome-stable
-
+apt-get -y -q install ubuntu-desktop
 
 
 # JDK 1.8
@@ -29,6 +29,8 @@ cd /opt
 wget --content-disposition -q https://dl.pstmn.io/download/latest/linux64
 gunzip Postman*
 tar -xf Postman*
+cp /vagrant_data/Postman.desktop /usr/share/applications/
+cp /vagrant_data/Postman.desktop /home/ubuntu/Desktop/
 
 # SoapUI
 echo "Installing SoapUI"
@@ -36,7 +38,8 @@ wget -q http://cdn01.downloads.smartbear.com/soapui/5.3.0/SoapUI-x64-5.3.0.sh
 chmod +x SoapUI-x64-5.3.0.sh
 ./SoapUI-x64-5.3.0.sh -q
 
-# Terminator 
+
+# Terminator
 apt-get install -y terminator
 
 # Mule anypoint
@@ -45,9 +48,11 @@ wget -q https://mule-studio.s3.amazonaws.com/6.2.2-U2/AnypointStudio-for-linux-6
 #cp /vagrant_data/Any* .
 gunzip AnypointStudio-for-linux-64bit-6.2.2-201701271427.tar.gz
 tar -xvf AnypointStudio-for-linux-64bit-6.2.2-201701271427.tar
+cp /vagrant_data/Anypoint.desktop /usr/share/applications/
+cp /vagrant_data/Anypoint.desktop /home/ubuntu/Desktop/
 
-echo "PATH=\"$PATH:/opt/Postman:/opt/SmartBear/SoapUI-5.3.0/bin:/opt/AnypointStudio\"" >> /home/vagrant/.profile
-source /home/vagrant/profile
+echo "PATH=\"$PATH:/opt/Postman:/opt/SmartBear/SoapUI-5.3.0/bin:/opt/AnypointStudio\"" >> /home/ubuntu/.profile
+source /home/ubuntu/profile
 
 # Docker
 echo "Installing Docker"
@@ -79,13 +84,11 @@ tar -xvf openshift-origin-client-tools-v1.4.1-3f9807a-linux-64bit.tar
 
 
 # Set up Maven
-mkdir -p /home/vagrant/.m2
+mkdir -p /home/ubuntu/.m2
 ## Master password
 mvn --encrypt-master-password 8umble8ee > pass.txt
-printf "<settingsSecurity>\n  <master>$(less pass.txt)</master>\n</settingsSecurity>" > /home/vagrant/.m2/settings-security-test.xml
+printf "<settingsSecurity>\n  <master>$(less pass.txt)</master>\n</settingsSecurity>" > /home/ubuntu/.m2/settings-security-test.xml
 rm pass.txt
 
 ## settings.xml
-cp /vagrant_data/settings.xml /home/vagrant/.m2/settings.xml
-
-
+cp /settings.xml /home/ubuntu/.m2/settings.xml
