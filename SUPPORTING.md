@@ -4,7 +4,9 @@
 
 Artifactory
 
-## Build Server 
+## Build Server
+
+Travis.ci
 
 Automate CI go-cd or Jenkins
 
@@ -47,4 +49,4 @@ http://blog.david-jensen.com/backup-wordpress-to-dropbox-amazon-ec2-centos/
 
 ## Databases
 
-Either based on Amazon or Docker containers 
+Either based on Amazon or Docker containers
