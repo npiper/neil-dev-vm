@@ -44,10 +44,9 @@ apt-get install -y terminator
 
 # Mule anypoint
 echo "Installing Mule Anypoint - approx 800Mb"
-wget -q https://mule-studio.s3.amazonaws.com/6.2.2-U2/AnypointStudio-for-linux-64bit-6.2.2-201701271427.tar.gz
-#cp /vagrant_data/Any* .
-gunzip AnypointStudio-for-linux-64bit-6.2.2-201701271427.tar.gz
-tar -xvf AnypointStudio-for-linux-64bit-6.2.2-201701271427.tar
+wget -q https://mule-studio.s3.amazonaws.com/https://mule-studio.s3.amazonaws.com/4.1.1-OCT14-U1/AnypointStudio-for-linux-64bit-4.1.1-201411041003.tar.gz
+gunzip AnypointStudio-for-linux-64bit-4.1.1-201411041003.tar.gz
+tar -xvf AnypointStudio-for-linux-64bit-4.1.1-201411041003.tar
 cp /vagrant_data/Anypoint.desktop /usr/share/applications/
 cp /vagrant_data/Anypoint.desktop /home/ubuntu/Desktop/
 
