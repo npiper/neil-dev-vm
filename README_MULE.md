@@ -27,6 +27,21 @@ cd vagrant
 vagrant up
 ```
 
+## Building Packer AMI to AWS
+
+```
+packer build -var 'aws_access_key=AAAAAAAAAAAAAA' -var 'aws_secret_key=secret_key' packer.json
+```
+
+## Starting an AMI
+
+Launch the EC2 instance using the AMI	ami-08a330036254e99e4
+
+```
+ssh -i ~/key.pem ubuntu@public-ip-address
+```
+
+
 ## Base instances / Refs
 
 https://atlas.hashicorp.com/boxcutter/boxes/ubuntu1610-desktop

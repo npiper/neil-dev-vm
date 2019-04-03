@@ -3,8 +3,19 @@
 # Set TZ to Melbourne
 timedatectl set-timezone Europe/London
 
+# Make data dir if not present
+mkdir -p /vagrant_data
+
+
 # Upgrade distribution
 apt-get dist-upgrade -y
+apt-get update
+
+# Install GUI
+apt install --no-install-recommends ubuntu-desktop
+apt install gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal vnc4server
+
+cat /usr/bin/vncserver
 
 # Google Chrome
 echo "Installing Chrome"
@@ -34,9 +45,9 @@ cp /vagrant_data/Postman.desktop /home/ubuntu/Desktop/
 
 # SoapUI
 echo "Installing SoapUI"
-wget -q http://cdn01.downloads.smartbear.com/soapui/5.3.0/SoapUI-x64-5.3.0.sh
-chmod +x SoapUI-x64-5.3.0.sh
-./SoapUI-x64-5.3.0.sh -q
+  wget -q https://s3.amazonaws.com/downloads.eviware/soapuios/5.5.0/SoapUI-x64-5.5.0.sh
+chmod +x SoapUI-x64-5.5.0.sh
+./SoapUI-x64-5.5.0.sh -q
 
 
 # Terminator
@@ -44,7 +55,7 @@ apt-get install -y terminator
 
 # Mule anypoint
 echo "Installing Mule Anypoint - approx 800Mb"
-wget -q https://mule-studio.s3.amazonaws.com/https://mule-studio.s3.amazonaws.com/4.1.1-OCT14-U1/AnypointStudio-for-linux-64bit-4.1.1-201411041003.tar.gz
+wget -q https://mule-studio.s3.amazonaws.com/4.1.1-OCT14-U1/AnypointStudio-for-linux-64bit-4.1.1-201411041003.tar.gz
 gunzip AnypointStudio-for-linux-64bit-4.1.1-201411041003.tar.gz
 tar -xvf AnypointStudio-for-linux-64bit-4.1.1-201411041003.tar
 cp /vagrant_data/Anypoint.desktop /usr/share/applications/
@@ -89,5 +100,7 @@ mvn --encrypt-master-password 8umble8ee > pass.txt
 printf "<settingsSecurity>\n  <master>$(less pass.txt)</master>\n</settingsSecurity>" > /home/ubuntu/.m2/settings-security-test.xml
 rm pass.txt
 
+ls /vagrant_data
+
 ## settings.xml
-cp /settings.xml /home/ubuntu/.m2/settings.xml
+#cp /vagrant_data/settings.xml /home/ubuntu/.m2/settings.xml
