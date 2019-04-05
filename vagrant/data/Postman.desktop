@@ -2,7 +2,7 @@
 Version=1.0
 Encoding=UTF-8
 Name=Postman
-Exec=/opt/Postman
+Exec=/opt/Postman/Postman
 Icon=/opt/Postman/app/resources/app/assets/icon.png
 Terminal=false
 Type=Application
