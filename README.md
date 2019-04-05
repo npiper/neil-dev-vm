@@ -1,4 +1,12 @@
-# Provisioning 
+# Provisioning an Ubuntu Desktop for API Development 
+
+## Problem statement
+
+As an API Developer I would like an automated way to setup and test a Development environment configuration and share the image acrossdifferent formats like an AWS AMI or Virtual box image.
+
+An example problem was when needing to upgrade Development environments between Mule 3 & Mule 4 - I wanted a separate development box to be able to switch between them without needing to install both versions on a single machine.
+
+## What this uses
 
 Packer - Virtualbox
 AWS AMI - Packer
