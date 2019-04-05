@@ -118,14 +118,25 @@ Terminal
 Links I used to get this going
 
 https://linux.die.net/man/1/vncserver
+
 https://misc.flogisoft.com/bash/tip_colors_and_formatting
+
 https://poweruphosting.com/blog/setup-vnc-server-on-ubuntu/
+
 https://stackoverflow.com/questions/42296329/how-to-properly-configure-xstartup-file-for-tightvnc-with-ubuntu-vps-gnome-envir
+
 https://linux.die.net/man/1/vncpasswd
+
 https://linux.die.net/man/1/vncconfig
+
 https://stackoverflow.com/questions/25657596/how-to-set-up-gui-on-amazon-ec2-ubuntu-server
+
 https://www.packer.io/docs/provisioners/file.html
+
 https://www.packer.io/intro/getting-started/build-image.html
+
 https://circleci.com/blog/how-to-build-immutable-infrastructure-with-packer-and-circleci-workflows/
+
 https://poweruphosting.com/blog/setup-vnc-server-on-ubuntu/
+
 https://www.packer.io/intro/getting-started/build-image.html		
