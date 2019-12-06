@@ -1,8 +1,8 @@
-# Provisioning an Ubuntu Desktop for API Development 
+# Provisioning an Ubuntu Desktop for API Development
 
 ## Problem statement
 
-As an API Developer I would like an automated way to setup and test a Development environment configuration and share the image acrossdifferent formats like an AWS AMI or Virtual box image.
+As an API Developer I would like an automated way to setup and test a Development environment configuration and share the image across different formats like an AWS AMI or Virtual box image.
 
 An example problem was when needing to upgrade Development environments between Mule 3 & Mule 4 - I wanted a separate development box to be able to switch between them without needing to install both versions on a single machine.
 
@@ -31,7 +31,7 @@ VNC Viewer ( to connect to the desktop)
 
 A private AMI image will be created in your AMI account called `mule-devvm {{timestamp}}`
 
-## Creating the image 
+## Creating the image
 
 Loginto AWS console, create a new instance based on the AMI
 Select the appropriate option for your private key to create a new one, or re-use one you created earlier
@@ -39,7 +39,15 @@ Select the appropriate option for your private key to create a new one, or re-us
 ### AWS CLI option
 
 ```
-aws ec2 .. 
+# Create Security group in vpc vpc-1a2b3c4d
+aws ec2 create-security-group --group-name mule-dev-sg --description "Mule Dev SG" --vpc-id vpc-1a2b3c4d
+
+# Add rules to Security Group
+aws ec2 authorize-security-group-ingress --group-id sg-903004f8 --protocol tcp --port 5411   --cidr 0.0.0.0/0
+
+# Run a Large EC2 based on the AMI, using key 'mule-devkp' in Subnet subnet-6e7f829e using SG ID sg-903004f8
+aws ec2 run-instances --image-id ami-06c883e1450bb04bc --count 1 --instance-type t2.large --key-name mule-devkp  --security-group-ids sg-903004f8 --subnet-id subnet-6e7f829e
+
 ```
 
 ## Modify the security group to allow Port 5901
