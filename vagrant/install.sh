@@ -45,8 +45,9 @@ cd /opt
 wget --content-disposition -q https://dl.pstmn.io/download/latest/linux64
 gunzip Postman*
 tar -xf Postman*
-cp /vagrant_data/data/Postman.desktop /usr/share/applications/Postman.desktop
-cp /vagrant_data/data/Postman.desktop /home/ubuntu/Desktop/Postman.desktop
+
+cp /vagrant_data/Postman.desktop /usr/share/applications/Postman.desktop
+cp /vagrant_data/Postman.desktop /home/ubuntu/Desktop/Postman.desktop
 
 # SoapUI
 echo "Installing SoapUI"
@@ -66,8 +67,8 @@ echo "Installing Mule Anypoint - approx 800Mb"
 wget -q https://mule-studio.s3.amazonaws.com/4.1.1-OCT14-U1/AnypointStudio-for-linux-64bit-4.1.1-201411041003.tar.gz
 gunzip AnypointStudio-for-linux-64bit-4.1.1-201411041003.tar.gz
 tar -xvf AnypointStudio-for-linux-64bit-4.1.1-201411041003.tar
-cp /vagrant_data/data/Anypoint.desktop /usr/share/applications/Anypoint.desktop
-cp /vagrant_data/data/Anypoint.desktop /home/ubuntu/Desktop/Anypoint.desktop
+cp /vagrant_data/Anypoint.desktop /usr/share/applications/Anypoint.desktop
+cp /vagrant_data/Anypoint.desktop /home/ubuntu/Desktop/Anypoint.desktop
 
 echo "PATH=\"$PATH:/opt/Postman:/opt/SmartBear/SoapUI-5.3.0/bin:/opt/AnypointStudio\"" >> /home/ubuntu/.profile
 source /home/ubuntu/profile
@@ -110,19 +111,19 @@ printf "<settingsSecurity>\n  <master>$(less pass.txt)</master>\n</settingsSecur
 rm pass.txt
 
 
-ls /vagrant_data/data
+ls /vagrant_data
 
 ## settings.xml
-cp /vagrant_data/data/settings.xml /home/ubuntu/.m2/settings.xml
+cp /vagrant_data/settings.xml /home/ubuntu/.m2/settings.xml
 chown -R ubuntu:ubuntu /home/ubuntu/.m2
 
 ## vnc
 sudo -u ubuntu mkdir -p /home/ubuntu/.vnc
-sudo -u ubuntu cp /vagrant_data/data/xstartup /home/ubuntu/.vnc/xstartup
+sudo -u ubuntu cp /vagrant_data/xstartup /home/ubuntu/.vnc/xstartup
 chmod +x /home/ubuntu/.vnc/xstartup
 chown -R ubuntu:ubuntu /home/ubuntu/.vnc
 
-Xtightvnc :1 -desktop X -auth /home/ubuntu/.Xauthority -geometry 1600x1200 -depth 24 -rfbwait 120000 -rfbauth /home/ubuntu/.vnc/passwd -rfbport 5901 -fp /usr/share/fonts/X11/misc/,/usr/share/fonts/X11/Type1/,/usr/share/fonts/X11/75dpi/,/usr/share/fonts/X11/100dpi/ -co /etc/X11/rgb -rfbauth /home/ubuntu/.vnc/passwd
+Xtightvnc :1 -desktop X -auth /home/ubuntu/.Xauthority -geometry 1600x1200 -depth 24 -rfbwait 120000 -rfbauth /home/ubuntu/.vnc/passwd -rfbport 5901 -fp /usr/share/fonts/X11/misc/,/usr/share/fonts/X11/Type1/,/usr/share/fonts/X11/75dpi/,/usr/share/fonts/X11/100dpi/ -co /etc/X11/rgb -rfbauth /home/ubuntu/.vnc/passwd &
 
 # VNC Password 'vncvnc' - make configurable
 #sudo -u ubuntu echo "vncvnc" | vncpasswd -f > /home/ubuntu/.vnc/passwd
@@ -132,8 +133,9 @@ sudo -u ubuntu echo "vncvnc\nvncvnc\nn\n" | vncserver
 sudo -u ubuntu vncserver -kill :1
 
 # VNC Server
-cp /vagrant_data/data/vncserver.service  /etc/systemd/system/vncserver@.service
-chmod +x /etc/systemd/system/vncserver@.service
+cp /vagrant_data/vncserver.service  /etc/systemd/system/vncserver@.service
+chmod +x
+/vncserver@.service
 #systemctl daemon-reload
 #systemctl enable vncserver@1.service
 #systemctl status vncserver@1
